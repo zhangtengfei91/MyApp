@@ -5,15 +5,14 @@ import {
     StyleSheet,
     FlatList,
 } from 'react-native';
+import Header from "./Home/Header";
 
 
 export default class Home extends Component{
     render(){
         return(
             <View style={styles.contain}>
-                <Text>
-                    首页
-                </Text>
+                <Header/>
             </View>
         )
     }
@@ -22,7 +21,8 @@ export default class Home extends Component{
 const styles=StyleSheet.create({
     contain:{
         flex:1,
-        justifyContent: 'center',
+        height:70,
+        //justifyContent: 'center',
         alignItems: 'center',
     }
 })

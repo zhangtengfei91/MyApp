@@ -21,7 +21,7 @@ import Home from './Home'
 
 
 
-
+//路由器
 const TabRoute={
     Home:{
         screen:Home,
@@ -106,7 +106,7 @@ const TabConfig={
         }
     }
 }
-
+//修改tabnavigator警告的问题，此方法已经过期!!!!!
 const Tab = createBottomTabNavigator(TabRoute,TabConfig);
 
 export default class Tabs extends Component{
