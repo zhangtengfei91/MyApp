@@ -3,27 +3,34 @@ import {
     View,
     Image,
     StyleSheet,
-    Text
+    Text,
+    Button
 } from 'react-native';
 
 import {
-    StackNavigator,
+    
     TabNavigator,
     createBottomTabNavigator,
     createTopTabNavigator,
+    
 } from 'react-navigation';
 
+import {
+    StackNavigator,   
+} from 'react-navigation';
+
+import  { createStackNavigator }  from 'react-navigation';
 
 import Find from './Home/Viewpage';
 import Cart from './Home';
 import Mine from './Home';
 import Home from './Home';
 import Details from './Details'
-import  { createStackNavigator }  from 'react-navigation';
+
+// //import Test from './test'
 
 
-
-//路由器
+// //路由器
 const TabRoute={
     Home:{
         screen:Home,
@@ -113,21 +120,25 @@ const   Tab = createBottomTabNavigator(TabRoute,TabConfig);
 
 
 
-export default MyTabs = createStackNavigator(
-    {
-        MainView: {screen: Tab },
-        Second: {screen: Details},
-    },
-    {
-      initialRouteName: 'MainView',//默认路由，就是第一个要显示的页面
-    }
-  );
 
+class Test extends Component{
 
+    static navigationOptions = {
+        title: 'Welcome'
+      };
 
+      render() {
+        const {navigate} = this.props.navigation;
+        return <View>
+          <Text>Hello, Chat App!</Text>
+          <Button
+              onPress={() => navigate('Chat', {user: 'Lucy'})}
+              title="Chat with Lucy"
+          />
+        </View>
+      }
+}
 
-
-//export default Tab;
 
 
 
@@ -137,3 +148,21 @@ const styles=StyleSheet.create({
 
     }
 })
+
+
+
+  
+export default  RootNavigator = createStackNavigator({
+    Home: {
+      screen: Tab
+    },
+    Chat: {
+      screen: Details,
+    },
+  });
+
+
+
+
+
+

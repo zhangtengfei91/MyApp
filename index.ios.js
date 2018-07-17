@@ -20,27 +20,23 @@ import {
   
 } from 'react-navigation';
 
-class MyApp1 extends Component {
+export default class MyApp extends Component {
   render() {
     return (
         <View style={styles.container}>
-            <MyTest navigation={this.props.navigation}/>
+            <Tabs/>
         </View>
 
     );
   }
 }
 
-export default MyApp = StackNavigator(
-  {
-      View1:{screen:MyApp1},
-      View2:{screen:Details}
-  }
-)
+
 
 const styles = StyleSheet.create({
-  container: {
+  container: { 
     flex: 1,
+    //backgroundColor:'red',
   },
 
 });

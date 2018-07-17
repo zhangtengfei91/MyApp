@@ -35,23 +35,17 @@ export default class Home extends Component{
         return(
             <View style={styles.contain}>
                 <Header/>
-                <ScrollView>
+                    <ScrollView>
                     <Viewpage/>
                     
-                    <Menu />
+                    <Menu navigation={this.props.navigation}/>
                     <Like/>
                     <View>
                         <List/>
                     </View>
 
                 </ScrollView>
-                <TouchableOpacity style={{height:60,backgroundColor:'orange',justifyContent: 'center',}} onPress={
-                    () => {
-                        this.props.navigation.navigate('Details')
-                    }
-                }>
-                   
-                </TouchableOpacity>
+                
             </View>
         )
     }

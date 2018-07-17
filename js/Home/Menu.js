@@ -28,7 +28,7 @@ export default class Menu extends Component{
                 <View style={styles.box}>
                     <TouchableOpacity style={{height:60,backgroundColor:'orange',justifyContent: 'center',}}
                             
-                            // onPress={() =>this.props.navigation.navigate('Details')}
+                            onPress={() =>this.props.navigation.navigate('Chat')}
                             >
                     <Image style={styles.icon} source={require('../../images/icon/market.png')}/>
                     <Text style={styles.txt}>京东超市</Text>

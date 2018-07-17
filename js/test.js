@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import {
     View,
     Text,
-    TouchableOpacity
+    Button
 } from 'react-native';
 
 import {
@@ -10,26 +10,39 @@ import {
     
 } from 'react-navigation';
 import Details from './Details';
+import  { createStackNavigator }  from 'react-navigation';
 
-export default class Test extends Component{
-    render(){
-        return(
-            <View>
-                <TouchableOpacity style={{height:60,backgroundColor:'orange',justifyContent: 'center',}} 
-                onPress={() =>this.props.navigation.navigate('Details')
-                }>                  
-                </TouchableOpacity>
-            </View>
-        )
-    }
+
+class Test extends Component{
+
+    static navigationOptions = {
+        title: 'Welcome'
+      };
+
+      render() {
+        const {navigate} = this.props.navigation;
+        return <View>
+          <Text>Hello, Chat App!</Text>
+          <Button
+              onPress={() => navigate('Chat', {user: 'Lucy'})}
+              title="Chat with Lucy"
+          />
+        </View>
+      }
 }
 
-const MyTest = StackNavigator(
-    {
-        View1:{screen:Test},
-        View2:{screen:Details}
-    }
-)
+  
+  const RootNavigator = createStackNavigator({
+    Home: {
+      screen: Test
+    },
+    Chat: {
+      screen: Details,
+    },
+  });
 
 
-//export default MyTest;
+
+export default RootNavigator;
+
+
