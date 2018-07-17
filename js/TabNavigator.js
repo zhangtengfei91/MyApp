@@ -7,17 +7,18 @@ import {
 } from 'react-native';
 
 import {
-
+    StackNavigator,
     TabNavigator,
     createBottomTabNavigator,
+    createTopTabNavigator,
 } from 'react-navigation';
 
 
-import Find from './Home';
-import Cart from './Home'
-import Mine from './Home'
-import Home from './Home'
-
+import Find from './Home/Viewpage';
+import Cart from './Home';
+import Mine from './Home';
+import Home from './Home';
+import Details from './Details'
 
 
 
@@ -109,15 +110,33 @@ const TabConfig={
 //修改tabnavigator警告的问题，此方法已经过期!!!!!
 const Tab = createBottomTabNavigator(TabRoute,TabConfig);
 
-export default class Tabs extends Component{
-    render(){
-        return(
-            <View style={styles.contain}>
-                <Tab/>
-            </View>
-        )
+
+
+
+export default MyNavigatior = StackNavigator(
+    {
+        Tab: {screen: Tab },
+        Details: {screen: Details},
+    },
+    {
+      initialRouteName: 'Tab',//默认路由，就是第一个要显示的页面
     }
-}
+  );
+  
+
+
+// export default class Tabs extends Component{
+//     render(){
+//         return(
+//             <View style={styles.contain}>
+//                 <Tab/>
+//             </View>
+//         )
+//     }
+// }
+
+// export default MyNavigatior;
+
 const styles=StyleSheet.create({
     contain:{
         flex:1,

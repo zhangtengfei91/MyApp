@@ -27,12 +27,17 @@ export default class Header extends Component{
                         source={require('../../images/header/icon_search.png')}
                         style={styles.search}
                     ></Image>
+
                     <TextInput
                         placeholder='输入商品名称'
                         style={styles.input}
                     >
-
                     </TextInput>
+
+                    <Image
+                        source={require('../../images/header/icon_voice.png')}
+                        style={styles.voice}
+                    ></Image>
                 </View>
 
             </View>
@@ -48,7 +53,7 @@ const styles=StyleSheet.create({
         //flex:1,
         flexDirection:'row',
         backgroundColor:'#d74047',
-        marginTop:30,
+        marginTop:0,
         height:50,
         paddingLeft: 10,
         paddingRight: 10,
@@ -62,14 +67,9 @@ const styles=StyleSheet.create({
         resizeMode:'stretch',
     },
 
-    search:{
-        width: 16.7,
-        height: 16.7,
-        resizeMode: 'stretch'
-    },
-
     searchBox:{
         flex:1,
+        flexDirection:'row',
         alignItems:'center',
         backgroundColor:'white',
         borderWidth: 1,
@@ -81,9 +81,23 @@ const styles=StyleSheet.create({
         marginLeft:8,
     },
 
+    search:{
+        width: 16.7,
+        height: 16.7,
+        resizeMode: 'stretch'
+    },
+
     input:{
         flex: 1,
         backgroundColor: 'transparent',
         fontSize: 14
-    }
+    },
+
+    voice:{
+        marginLeft: 5,
+        marginRight: 8,
+        width: 15,
+        height: 20,
+        resizeMode: 'stretch'
+    },
 })
