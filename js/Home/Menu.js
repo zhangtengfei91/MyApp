@@ -20,9 +20,6 @@ const ScreenWidth = Dimensions.get('window').width;
 export default class Menu extends Component{
     
     render(){
-       // const { navigate } = this.props.navigation;
-    //    const obj = this._getObj;
-    //    console.log(obj)
         return(
             <View style={styles.menu}>
                 <View style={styles.box}>
