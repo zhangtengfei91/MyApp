@@ -19,6 +19,7 @@ import Cart from './Home';
 import Mine from './Home';
 import Home from './Home';
 import Details from './Details'
+import  { createStackNavigator }  from 'react-navigation';
 
 
 
@@ -108,34 +109,27 @@ const TabConfig={
     }
 }
 //修改tabnavigator警告的问题，此方法已经过期!!!!!
-const Tab = createBottomTabNavigator(TabRoute,TabConfig);
+const   Tab = createBottomTabNavigator(TabRoute,TabConfig);
 
 
 
-
-export default MyNavigatior = StackNavigator(
+export default MyTabs = createStackNavigator(
     {
-        Tab: {screen: Tab },
-        Details: {screen: Details},
+        MainView: {screen: Tab },
+        Second: {screen: Details},
     },
     {
-      initialRouteName: 'Tab',//默认路由，就是第一个要显示的页面
+      initialRouteName: 'MainView',//默认路由，就是第一个要显示的页面
     }
   );
-  
 
 
-// export default class Tabs extends Component{
-//     render(){
-//         return(
-//             <View style={styles.contain}>
-//                 <Tab/>
-//             </View>
-//         )
-//     }
-// }
 
-// export default MyNavigatior;
+
+
+//export default Tab;
+
+
 
 const styles=StyleSheet.create({
     contain:{

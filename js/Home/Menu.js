@@ -6,28 +6,29 @@ import {
     StyleSheet,
     TouchableOpacity
 } from 'react-native';
+
+import {
+    StackNavigator,
+    TabNavigator,
+    createBottomTabNavigator,
+    createTopTabNavigator,
+} from 'react-navigation';
+import Home from '../Home'
 const Dimensions = require('Dimensions');
 const ScreenWidth = Dimensions.get('window').width;
 
 export default class Menu extends Component{
-    constructor(props){
-        super(props);
-        this.props='Details'
-        
-    }
     
     render(){
-        //const { navigate } = this.props.navigation;
-        //alert(this.props.navigation);
-        //const { navigate } = this.props.navigation;
+       // const { navigate } = this.props.navigation;
+    //    const obj = this._getObj;
+    //    console.log(obj)
         return(
             <View style={styles.menu}>
                 <View style={styles.box}>
                     <TouchableOpacity style={{height:60,backgroundColor:'orange',justifyContent: 'center',}}
-                            navigate={this.props.navigation}
-                            //onPress={() => this.props.navigation.navigate('Details')}
-                            onPress={() => this.props.getName
                             
+                            // onPress={() =>this.props.navigation.navigate('Details')}
                             >
                     <Image style={styles.icon} source={require('../../images/icon/market.png')}/>
                     <Text style={styles.txt}>京东超市</Text>
@@ -67,6 +68,8 @@ export default class Menu extends Component{
 }
 
 
+
+
 const styles=StyleSheet.create({
     contain:{
         flex:1,
@@ -84,7 +87,7 @@ const styles=StyleSheet.create({
         flexDirection:'column',
         justifyContent:'center',
         alignItems:'center',
-        borderWidth:0.5,
+        borderWidth:1,
         borderColor:'#dcdcdc',
         width:ScreenWidth/4,
         height:ScreenWidth/6,

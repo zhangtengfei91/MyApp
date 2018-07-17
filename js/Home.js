@@ -9,6 +9,12 @@ import {
     Image,
     TouchableOpacity
 } from 'react-native';
+
+import {
+    StackNavigator,
+    
+} from 'react-navigation';
+
 import Header from "./Home/Header";
 import List from './Home/List';
 import Viewpage from './Home/Viewpage';
@@ -22,52 +28,37 @@ const ScreenWidth = Dimensions.get('window').width;
 
 export default class Home extends Component{
 
-    constructor(props){
-        super(props);
-        this.state={
-            name:''
-        }
+
    
-
-    }
-    
-    getName = () => {
-        this.setState(name,this.props)
-    }
-
     render(){
+        //const {navigate} = this.props.navigation;
         return(
             <View style={styles.contain}>
                 <Header/>
                 <ScrollView>
                     <Viewpage/>
                     
-
-                    
-                    <TouchableOpacity style={{height:60,backgroundColor:'orange',justifyContent: 'center',}}
-                            //navigate={this.props.navigation}
-                            onPress={() => getName}
-                            
-                            >
-                    
-                    </TouchableOpacity>
-                    <Menu/>
-
-
-
-                    
-                    {/*<MarqueeLabel/>*/}
+                    <Menu />
                     <Like/>
                     <View>
                         <List/>
                     </View>
 
                 </ScrollView>
-
+                <TouchableOpacity style={{height:60,backgroundColor:'orange',justifyContent: 'center',}} onPress={
+                    () => {
+                        this.props.navigation.navigate('Details')
+                    }
+                }>
+                   
+                </TouchableOpacity>
             </View>
         )
     }
 }
+
+
+
 
 
 

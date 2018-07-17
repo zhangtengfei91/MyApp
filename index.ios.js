@@ -12,24 +12,35 @@ import {
   View
 } from 'react-native';
 import Tabs from './js/TabNavigator'
+import Home from './js/Home'
+import MyTest from './js/test'
+import Details from './js/test'
+import {
+  StackNavigator,
+  
+} from 'react-navigation';
 
-export default class MyApp extends Component {
+class MyApp1 extends Component {
   render() {
     return (
         <View style={styles.container}>
-            <Tabs/>
+            <MyTest navigation={this.props.navigation}/>
         </View>
 
     );
   }
 }
 
+export default MyApp = StackNavigator(
+  {
+      View1:{screen:MyApp1},
+      View2:{screen:Details}
+  }
+)
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
-    // backgroundColor: '#F5FCFF',
   },
 
 });

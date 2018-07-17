@@ -5,6 +5,7 @@ import {
     Text,
     Image,
     Alert,
+    TouchableOpacity,
     StyleSheet
 } from 'react-native';
 const Dimensions = require('Dimensions');
@@ -16,9 +17,15 @@ export default class Header extends Component{
     render(){
         return(
             <View style={styles.contain}>
+
+             <TouchableOpacity style={{height:60,backgroundColor:'orange',justifyContent: 'center',}}            
+                            onPress={() =>this.props.navigation.navigate('Details')}
+                            >                  
+             </TouchableOpacity>
                 <Image
                     source={require('../../images/header/header_logo.png')}
                     style={styles.logo}
+                    
                 >
                 </Image>
 
