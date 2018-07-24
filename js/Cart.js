@@ -36,7 +36,7 @@ class SonComponent extends Component{
     render(){
         return(
             <View>
-                <Text>{this.props.name}的儿子</Text>
+                <Text>{this.props.name}的子组件</Text>
             </View>
         )
     }
