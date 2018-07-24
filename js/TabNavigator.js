@@ -22,12 +22,11 @@ import {
 import  { createStackNavigator }  from 'react-navigation';
 
 import Find from './Home/Viewpage';
-import Cart from './Home';
+import Cart from './Cart';
 import Mine from './Home';
 import Home from './Home';
-import Details from './Details'
+import Market from './Market/Market';
 
-// //import Test from './test'
 
 
 // //路由器
@@ -35,6 +34,7 @@ const TabRoute={
     Home:{
         screen:Home,
         navigationOptions:{
+            
             tabBarLabel:'首页',
             tabBarIcon:({tintColor})=>(
                 <Image
@@ -83,6 +83,8 @@ const TabRoute={
 }
 
 const TabConfig={
+    animationEnabled: false, // 切换页面时是否有动画效果
+    swipeEnabled: true, // 是否可以左右滑动切换tab
     tabbarPosition:'bottom',
     animationEnabled:true,
     swipeEnabled: true,
@@ -91,6 +93,7 @@ const TabConfig={
     //设置Tab标签的属性
 
     tabBarOptions: {
+       
         //Android属性
         upperCaseLabel: false,//是否使标签大写，默认为true
         //共有属性
@@ -118,48 +121,51 @@ const TabConfig={
 //修改tabnavigator警告的问题，此方法已经过期!!!!!
 const   Tab = createBottomTabNavigator(TabRoute,TabConfig);
 
+// class Test extends Component{
 
+//     static navigationOptions = {
+//         title: 'Welcome'
+//       };
 
-
-class Test extends Component{
-
-    static navigationOptions = {
-        title: 'Welcome'
-      };
-
-      render() {
-        const {navigate} = this.props.navigation;
-        return <View>
-          <Text>Hello, Chat App!</Text>
-          <Button
-              onPress={() => navigate('Chat', {user: 'Lucy'})}
-              title="Chat with Lucy"
-          />
-        </View>
-      }
-}
-
-
-
+//       render() {
+//         const {navigate} = this.props.navigation;
+//         return <View>
+//           <Text>Hello, Chat App!</Text>
+//           <Button
+//               onPress={() => navigate('Chat', {user: 'Lucy'})}
+//               title="Chat with Lucy"
+//           />
+//         </View>
+//       }
+// }
 
 const styles=StyleSheet.create({
     contain:{
         flex:1,
-
     }
 })
 
+const StackNavigatorConfig = {
+    //initialRouteParams: {headerMode: 'none'},
+    headerMode:'screen',
+    header:null,
+
+}
 
 
-  
+
 export default  RootNavigator = createStackNavigator({
     Home: {
-      screen: Tab
+      screen: Tab,
+      navigationOptions:{
+          header:null
+      }
+      
     },
     Chat: {
-      screen: Details,
+      screen: Market,
     },
-  });
+  },StackNavigatorConfig);
 
 
 

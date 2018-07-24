@@ -45,8 +45,8 @@ export default class Test extends Component{
                     
                     <FlatList
                         ref={(flatList)=>this._flatList = flatList}
-                        ListHeaderComponent={this._header}
-                        ListFooterComponent={this._footer}
+                        //ListHeaderComponent={this._header}
+                        //ListFooterComponent={this._footer}
                         ItemSeparatorComponent={this._separator}
                         renderItem={this._renderItem}
                         onRefresh={this.refreshing}

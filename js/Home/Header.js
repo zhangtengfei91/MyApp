@@ -18,10 +18,7 @@ export default class Header extends Component{
         return(
             <View style={styles.contain}>
 
-             <TouchableOpacity style={{height:60,backgroundColor:'orange',justifyContent: 'center',}}            
-                            onPress={() =>this.props.navigation.navigate('Details')}
-                            >                  
-             </TouchableOpacity>
+            
                 <Image
                     source={require('../../images/header/header_logo.png')}
                     style={styles.logo}
@@ -61,11 +58,12 @@ const styles=StyleSheet.create({
         flexDirection:'row',
         backgroundColor:'#d74047',
         marginTop:0,
-        height:50,
+        height:70,
         paddingLeft: 10,
         paddingRight: 10,
         width:ScreenWidth,
         alignItems:'center',
+        //justifyContent:'center'
     },
 
     logo:{

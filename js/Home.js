@@ -21,7 +21,7 @@ import Viewpage from './Home/Viewpage';
 import Menu from './Home/Menu';
 import MarqueeLabel from './Home/Message';
 import Like from './Home/Like';
-import Details from './Details';
+
 
 const Dimensions = require('Dimensions');
 const ScreenWidth = Dimensions.get('window').width;
@@ -32,6 +32,7 @@ export default class Home extends Component{
    
     render(){
         //const {navigate} = this.props.navigation;
+        console.log(this)
         return(
             <View style={styles.contain}>
                 <Header/>
